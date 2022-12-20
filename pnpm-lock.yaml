@@ -22,6 +22,7 @@ specifiers:
   lint-staged: 11.0.1
   npm-run-all: ^4.1.5
   pinia: ^2.0.28
+  postcss-px-to-viewport: ^1.1.1
   prettier: ^2.7.1
   typescript: ~4.7.4
   unplugin-vue-components: ^0.22.12
@@ -60,6 +61,7 @@ devDependencies:
   jsdom: 20.0.3
   lint-staged: 11.0.1
   npm-run-all: 4.1.5
+  postcss-px-to-viewport: 1.1.1
   prettier: 2.8.1
   typescript: 4.7.4
   vite: 4.0.1_@types+node@18.11.15
@@ -3148,6 +3150,11 @@ packages:
     resolution: {integrity: sha512-90yv+6538zuvUMnN+zCr8LuV6bPFdq50304114vJYJ8RDyK8D5O9Phpbd6SZWgI7PwzmmfN1upeOJlvybDSgCw==}
     dev: true
 
+  /object-assign/4.1.1:
+    resolution: {integrity: sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==}
+    engines: {node: '>=0.10.0'}
+    dev: true
+
   /object-inspect/1.12.2:
     resolution: {integrity: sha512-z+cPxW0QGUp0mcqcsgQyLVRDoXFQbXOwBaqyF7VIgI4TWNQsDHrBpUQslRmIfAoYWdYzs6UlKJtB2XJpTaNSpQ==}
 
@@ -3367,6 +3374,13 @@ packages:
     resolution: {integrity: sha512-gQR3WpIgNIKwBMVLkpMUeR3e1/E1y42bqDQZfql+kDeXd8COYfM8PQA4X6y7a8u9Ua9FHmsrrmirW2vHs45hWg==}
     dependencies:
       semver-compare: 1.0.0
+    dev: true
+
+  /postcss-px-to-viewport/1.1.1:
+    resolution: {integrity: sha512-2x9oGnBms+e0cYtBJOZdlwrFg/mLR4P1g2IFu7jYKvnqnH/HLhoKyareW2Q/x4sg0BgklHlP1qeWo2oCyPm8FQ==}
+    dependencies:
+      object-assign: 4.1.1
+      postcss: 8.4.20
     dev: true
 
   /postcss-selector-parser/6.0.11:
