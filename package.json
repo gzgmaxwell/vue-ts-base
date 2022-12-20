@@ -26,6 +26,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "pinia": "^2.0.28",
     "unplugin-vue-components": "^0.22.12",
+    "vant": "^4.0.3",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"
   },
@@ -46,6 +47,7 @@
     "jsdom": "^20.0.3",
     "lint-staged": "11.0.1",
     "npm-run-all": "^4.1.5",
+    "postcss-px-to-viewport": "^1.1.1",
     "prettier": "^2.7.1",
     "typescript": "~4.7.4",
     "vite": "^4.0.0",
