@@ -9,6 +9,7 @@ import {
   VantResolver
 } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
+import Pages from 'vite-plugin-pages'
 
 const loderPxtovw = pxtovw({
   unitToConvert: 'px', // 要转化的单位
@@ -36,6 +37,14 @@ export default defineConfig({
       resolvers: [ElementPlusResolver(), VantResolver()],
       extensions: ['vue'],
       dts: 'src/components.d.ts'
+    }),
+    Pages({
+      dirs: [
+        { dir: 'src/views', baseRoute: '' },
+        { dir: 'src/views/home', baseRoute: '/' }
+      ],
+      importMode: 'async',
+      exclude: ['**/components/**']
     })
   ],
   css: {

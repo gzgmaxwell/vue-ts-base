@@ -3,9 +3,14 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "vite --host 0.0.0.0",
-    "build": "run-p type-check build-only",
-    "preview": "vite preview",
+    "serve": "pnpm serve:develop",
+    "serve:develop": "vite --host 0.0.0.0 --mode development",
+    "serve:preview": "vite --host 0.0.0.0 --mode preview",
+    "serve:product": "vite --host 0.0.0.0 --mode production",
+    "build": "pnpm buld:product",
+    "build:develop": "run-p type-check build-only --mode development",
+    "build:preview": "run-p type-check build-only --mode preview",
+    "build:product": "run-p type-check build-only --mode production",
     "test:unit": "vitest --environment jsdom --root src/",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
@@ -14,6 +19,7 @@
     "commit": "npx cz"
   },
   "dependencies": {
+    "axios": "^1.2.1",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.25.2",
@@ -45,6 +51,7 @@
     "prettier": "^2.7.1",
     "typescript": "~4.7.4",
     "vite": "^4.0.0",
+    "vite-plugin-pages": "^0.28.0",
     "vitest": "^0.25.6",
     "vue-tsc": "^1.0.12"
   },

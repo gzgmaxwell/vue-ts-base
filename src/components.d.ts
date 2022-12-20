@@ -7,7 +7,6 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    HelloWorld: typeof import('./components/HelloWorld.vue')['default']
     IconCommunity: typeof import('./components/icons/IconCommunity.vue')['default']
     IconDocumentation: typeof import('./components/icons/IconDocumentation.vue')['default']
     IconEcosystem: typeof import('./components/icons/IconEcosystem.vue')['default']
@@ -15,9 +14,6 @@ declare module '@vue/runtime-core' {
     IconTooling: typeof import('./components/icons/IconTooling.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    TheWelcome: typeof import('./components/TheWelcome.vue')['default']
-    VanButton: typeof import('vant/es')['Button']
-    VanConfigProvider: typeof import('vant/es')['ConfigProvider']
-    WelcomeItem: typeof import('./components/WelcomeItem.vue')['default']
+    DemoGlobalComponent: typeof import('./components/DemoGlobalComponent.vue')['default']
   }
 }
