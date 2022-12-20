@@ -3,7 +3,7 @@ import App from './App.vue'
 import VuePlugin from './plugins/vue'
 import './plugins/vant'
 
-import './styles/main.css'
+// import './styles/main.css'
 
 const app = createApp(App)
 const vuePlugin = new VuePlugin(app)
