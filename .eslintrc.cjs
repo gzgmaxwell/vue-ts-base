@@ -106,6 +106,8 @@ module.exports = {
 
     'import/extensions': 'off',
 
+    'vue/multi-word-component-names': 'off',
+
     // 不允许定义 any 类型。
     '@typescript-eslint/no-explicit-any': 'off',
 

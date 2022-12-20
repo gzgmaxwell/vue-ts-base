@@ -6,6 +6,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
+import Pages from 'vite-plugin-pages'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -17,6 +18,14 @@ export default defineConfig({
       resolvers: [ElementPlusResolver()],
       extensions: ['vue'],
       dts: 'src/components.d.ts'
+    }),
+    Pages({
+      dirs: [
+        { dir: 'src/views', baseRoute: '' },
+        { dir: 'src/views/home', baseRoute: '/' }
+      ],
+      importMode: 'async',
+      exclude: ['**/components/**']
     })
   ],
   resolve: {
