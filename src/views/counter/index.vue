@@ -1,5 +1,4 @@
 <template>
-  <div>counter</div>
   <MyComponent />
 </template>
 
