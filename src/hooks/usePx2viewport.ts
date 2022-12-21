@@ -1,4 +1,4 @@
-export const usePx2viewport = (px, type = 'vw') => {
+export const usePx2viewport = (px: string, type = 'vw') => {
   if (/%/gi.test(px)) {
     return px
   }
