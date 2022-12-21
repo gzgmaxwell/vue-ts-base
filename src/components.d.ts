@@ -16,5 +16,12 @@ declare module '@vue/runtime-core' {
     IconTooling: typeof import('./components/icons/IconTooling.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    VanButton: typeof import('vant/es')['Button']
+    VanConfigProvider: typeof import('vant/es')['ConfigProvider']
+    VanField: typeof import('vant/es')['Field']
+    VanForm: typeof import('vant/es')['Form']
+    VanRate: typeof import('vant/es')['Rate']
+    VanSlider: typeof import('vant/es')['Slider']
+    VanSwitch: typeof import('vant/es')['Switch']
   }
 }
