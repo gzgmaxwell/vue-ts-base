@@ -48,9 +48,9 @@ export default defineConfig({
       exclude: ['**/components/**']
     }),
     visualizer({
-      open: true, // 注意这里要设置为true，否则无效
-      gzipSize: true,
-      brotliSize: true
+      open: true, // 在默认用户代理中打开生成的文件
+      gzipSize: true, // 从源代码中收集 gzip 大小并将其显示在图表中
+      brotliSize: true // 从源代码中收集 brotli 大小并将其显示在图表中
     })
   ],
   css: {
