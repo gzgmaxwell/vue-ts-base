@@ -1,5 +1,5 @@
 import { fileURLToPath, URL } from 'node:url'
-import { defineConfig } from 'vite'
+import { defineConfig, type PluginOption } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import pxtovw from 'postcss-px-to-viewport'
@@ -12,6 +12,8 @@ import {
 import Components from 'unplugin-vue-components/vite'
 import Pages from 'vite-plugin-pages'
 import VueSetupExtend from 'vite-plugin-vue-setup-extend'
+
+const IS_PRODUCTION = process.env.NODE_ENV === 'production'
 
 const loderPxtovw = pxtovw({
   unitToConvert: 'px', // 要转化的单位
@@ -28,33 +30,38 @@ const loderPxtovw = pxtovw({
   landscape: false // 是否处理横屏情况
 })
 
-// https://vitejs.dev/config/
+const plugins: PluginOption[] = [
+  vue(),
+  vueJsx(),
+  Components({
+    dirs: ['src/components'],
+    resolvers: [ElementPlusResolver(), VantResolver()],
+    extensions: ['vue'],
+    dts: 'src/components.d.ts'
+  }),
+  Pages({
+    dirs: [
+      { dir: 'src/views', baseRoute: '' },
+      { dir: 'src/views/home', baseRoute: '/' }
+    ],
+    importMode: 'async',
+    exclude: ['**/components/**']
+  }),
+  VueSetupExtend()
+]
 
-export default defineConfig({
-  plugins: [
-    vue(),
-    vueJsx(),
-    Components({
-      dirs: ['src/components'],
-      resolvers: [ElementPlusResolver(), VantResolver()],
-      extensions: ['vue'],
-      dts: 'src/components.d.ts'
-    }),
-    Pages({
-      dirs: [
-        { dir: 'src/views', baseRoute: '' },
-        { dir: 'src/views/home', baseRoute: '/' }
-      ],
-      importMode: 'async',
-      exclude: ['**/components/**']
-    }),
+if (IS_PRODUCTION) {
+  plugins.push(
     visualizer({
       open: true, // 在默认用户代理中打开生成的文件
       gzipSize: true, // 从源代码中收集 gzip 大小并将其显示在图表中
       brotliSize: true // 从源代码中收集 brotli 大小并将其显示在图表中
-    }),
-    VueSetupExtend()
-  ],
+    })
+  )
+}
+
+export default defineConfig({
+  plugins,
   css: {
     postcss: {
       plugins: [loderPxtovw]
