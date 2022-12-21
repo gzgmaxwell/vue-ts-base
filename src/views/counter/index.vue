@@ -1,3 +1,5 @@
+<script setup lang="ts" name="CounterView"></script>
+
 <template>
-  <div>counter</div>
+  <div class="counter-view">counter</div>
 </template>

@@ -1,7 +1,9 @@
-<script setup lang="ts">
-import { RouterView } from 'vue-router'
+<script setup lang="ts" name="HomeView">
+import { RouterLink } from 'vue-router'
 </script>
 
 <template>
-  <RouterView>index</RouterView>
+  <div class="home-view">
+    <RouterLink to="/counter">进入Counter</RouterLink>
+  </div>
 </template>

@@ -10,6 +10,7 @@ import {
 } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
 import Pages from 'vite-plugin-pages'
+import VueSetupExtend from 'vite-plugin-vue-setup-extend'
 
 const loderPxtovw = pxtovw({
   unitToConvert: 'px', // 要转化的单位
@@ -45,7 +46,8 @@ export default defineConfig({
       ],
       importMode: 'async',
       exclude: ['**/components/**']
-    })
+    }),
+    VueSetupExtend()
   ],
   css: {
     postcss: {
