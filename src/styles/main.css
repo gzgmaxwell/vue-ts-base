@@ -1,4 +1,4 @@
-@import './base.css';
+/* @import './base.css'; */
 
 .safe-area-inset-top{
 	padding-top: constant(safe-area-inset-top);
@@ -7,6 +7,11 @@
 .safe-area-inset-bottom{
 	padding-bottom: constant(safe-area-inset-bottom);
 	padding-bottom: env(safe-area-inset-bottom);
+}
+
+
+:root[type='b'] {
+	background: var(--van-background-2);
 }
 /* #app {
   max-width: 1280px;
