@@ -1,3 +1,5 @@
+<script setup lang="ts" name="CounterView"></script>
+
 <template>
   <MyComponent />
 </template>
