@@ -4,6 +4,8 @@ import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import pxtovw from 'postcss-px-to-viewport'
 import { visualizer } from 'rollup-plugin-visualizer'
+import tailwindcss from 'tailwindcss'
+import autoprefixer from 'autoprefixer'
 
 import {
   ElementPlusResolver,
@@ -64,7 +66,7 @@ export default defineConfig({
   plugins,
   css: {
     postcss: {
-      plugins: [loderPxtovw]
+      plugins: [loderPxtovw, tailwindcss, autoprefixer]
     }
   },
   resolve: {

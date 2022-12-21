@@ -4,6 +4,13 @@
     :theme="theme"
   >
     <van-row justify="center">
+      <van-col span="15"
+        ><h1 class="text-3xl font-bold underline">
+          tailwindcss andy!
+        </h1></van-col
+      >
+    </van-row>
+    <van-row justify="center">
       <van-col span="6">span: 6</van-col>
       <van-col span="6">span: 6</van-col>
       <van-col span="6">span: 6</van-col>
