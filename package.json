@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "serve": "pnpm serve:develop",
-    "serve:develop": "vite --host 0.0.0.0 --mode development",
-    "serve:preview": "vite --host 0.0.0.0 --mode preview",
-    "serve:product": "vite --host 0.0.0.0 --mode production",
+    "serve:develop": "vite --mode development",
+    "serve:preview": "vite --mode preview",
+    "serve:product": "vite --mode production",
     "build": "pnpm build:product",
     "build:develop": "NODE_ENV=development run-p type-check build-only",
     "build:preview": "NODE_ENV=preview run-p type-check build-only",
