@@ -1,4 +1,5 @@
 import { fileURLToPath, URL } from 'node:url'
+import { dirname, resolve } from 'node:path'
 import { defineConfig, type PluginOption } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
@@ -7,13 +8,11 @@ import { visualizer } from 'rollup-plugin-visualizer'
 import tailwindcss from 'tailwindcss'
 import autoprefixer from 'autoprefixer'
 
-import {
-  ElementPlusResolver,
-  VantResolver
-} from 'unplugin-vue-components/resolvers'
+import { VantResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
 import Pages from 'vite-plugin-pages'
 import VueSetupExtend from 'vite-plugin-vue-setup-extend'
+import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite'
 
 const IS_PRODUCTION = process.env.NODE_ENV === 'production'
 
@@ -37,7 +36,7 @@ const plugins: PluginOption[] = [
   vueJsx(),
   Components({
     dirs: ['src/components'],
-    resolvers: [ElementPlusResolver(), VantResolver()],
+    resolvers: [VantResolver()],
     extensions: ['vue'],
     dts: 'src/components.d.ts'
   }),
@@ -49,7 +48,10 @@ const plugins: PluginOption[] = [
     importMode: 'async',
     exclude: ['**/components/**']
   }),
-  VueSetupExtend()
+  VueSetupExtend(),
+  VueI18nPlugin({
+    include: resolve(dirname(fileURLToPath(import.meta.url)), 'src/i18n/*')
+  })
 ]
 
 if (IS_PRODUCTION) {
