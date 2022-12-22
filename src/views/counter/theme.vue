@@ -65,7 +65,7 @@ import type { ConfigProviderTheme, ConfigProviderThemeVars } from 'vant'
 const theme = ref<ConfigProviderTheme>('light')
 const checked = ref(false)
 
-const onUpdateValue = newValue => {
+const onUpdateValue = (newValue: boolean) => {
   checked.value = newValue
   theme.value = newValue ? 'dark' : 'light'
   if (newValue) {
