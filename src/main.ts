@@ -4,7 +4,7 @@ import VuePlugin from './plugins/vue'
 import './plugins/vant'
 
 import './styles/main.css'
-import I18NPlugin from './plugins/ i18n'
+import I18NPlugin from './plugins/i18n'
 
 const app = createApp(App)
 const vuePlugin = new VuePlugin(app)
