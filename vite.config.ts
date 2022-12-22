@@ -73,5 +73,12 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
+  },
+  logLevel: IS_PRODUCTION ? 'silent' : 'info',
+  server: {
+    host: '0.0.0.0'
+  },
+  build: {
+    target: 'es6'
   }
 })

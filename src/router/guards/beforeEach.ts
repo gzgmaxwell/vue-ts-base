@@ -12,7 +12,6 @@ export default class BeforeEachGuard {
   public static load(router: Router) {
     router.beforeEach(to => {
       BeforeEachGuard.recordRouteNameStack(to)
-      console.log(to)
     })
   }
 
