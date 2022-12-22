@@ -29,6 +29,7 @@
     "unplugin-vue-components": "^0.22.12",
     "vant": "^4.0.3",
     "vue": "^3.2.45",
+    "vue-i18n": "9",
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
