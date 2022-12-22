@@ -1,13 +1,10 @@
 <script setup lang="ts" name="HomeView">
 import { useRouter } from 'vue-router'
-import { useI18n } from 'vue-i18n'
 import { useAppStore } from '@/stores'
 
 const router = useRouter()
-const { t } = useI18n({ useScope: 'global' })
 const appStore = useAppStore()
 
-const navigateToNewPage = () => router.push('/counter')
 const changeLocale = () => {
   const NEW_LOCALE = appStore.locale === 'zhCN' ? 'enUS' : 'zhCN'
   appStore.changeLocale(NEW_LOCALE)
@@ -20,9 +17,9 @@ const changeLocale = () => {
       class="home-view__button"
       type="primary"
       block
-      @click="navigateToNewPage"
+      @click="() => router.push('/counter')"
     >
-      {{ t('Navigate To New Page') }}
+      {{ $t('Navigate To New Page') }}
     </van-button>
     <van-button
       class="home-view__button"
@@ -30,7 +27,15 @@ const changeLocale = () => {
       block
       @click="changeLocale"
     >
-      {{ t('Change Language') }}
+      {{ $t('Change Language') }}
+    </van-button>
+    <van-button
+      class="home-view__button"
+      type="primary"
+      block
+      @click="() => router.push('/sfcI18N')"
+    >
+      SFC I18N {{ $t('Test') }}
     </van-button>
   </div>
 </template>
