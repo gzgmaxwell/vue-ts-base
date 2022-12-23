@@ -45,6 +45,14 @@ const changeLocale = () => {
     >
       {{ $t('Navigate To New Mock') }}
     </van-button>
+    <van-button
+      class="home-view__button"
+      type="primary"
+      block
+      @click="() => router.push('/vantlang')"
+    >
+      {{ $t('Vant lang') }}
+    </van-button>
   </div>
 </template>
 
