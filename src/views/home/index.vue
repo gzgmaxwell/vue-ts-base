@@ -37,6 +37,14 @@ const changeLocale = () => {
     >
       SFC I18N {{ $t('Test') }}
     </van-button>
+    <van-button
+      class="home-view__button"
+      type="primary"
+      block
+      @click="() => router.push('/mock')"
+    >
+      {{ $t('Navigate To New Mock') }}
+    </van-button>
   </div>
 </template>
 

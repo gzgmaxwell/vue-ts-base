@@ -13,6 +13,7 @@ import Components from 'unplugin-vue-components/vite'
 import Pages from 'vite-plugin-pages'
 import VueSetupExtend from 'vite-plugin-vue-setup-extend'
 import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite'
+import { viteMockServe } from 'vite-plugin-mock'
 
 const IS_PRODUCTION = process.env.NODE_ENV === 'production'
 
@@ -51,6 +52,10 @@ const plugins: PluginOption[] = [
   VueSetupExtend(),
   VueI18nPlugin({
     include: resolve(dirname(fileURLToPath(import.meta.url)), 'src/i18n/*')
+  }),
+  viteMockServe({
+    mockPath: 'mock', // mock 文件路径
+    supportTs: true // 如果使用 js发开，则需要配置 supportTs 为 false
   })
 ]
 
