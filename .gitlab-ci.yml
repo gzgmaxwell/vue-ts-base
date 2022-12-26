@@ -7,27 +7,15 @@ variables:
   TZ: 'Asia/Shanghai'
 
 stages:
-  - install
   - test
-
-Install Dependencies:
-  stage: install
-  tags:
-    - test
-  only:
-    - main
-    - pushes
-    - merge_requests
-  script:
-    - pnpm install
 
 Lint Test:
   stage: test
   tags:
     - test
-  only:
-    - main
-    - pushes
-    - merge_requests
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
   script:
+    - yarn global add pnpm
+    - pnpm install
     - pnpm lint:check
