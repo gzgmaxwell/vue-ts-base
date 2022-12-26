@@ -7,19 +7,7 @@ variables:
   TZ: 'Asia/Shanghai'
 
 stages:
-  - install
   - test
-
-Install Dependencies:
-  stage: install
-  tags:
-    - test
-  only:
-    - main
-    - pushes
-    - merge_requests
-  script:
-    - pnpm install
 
 Lint Test:
   stage: test
@@ -30,4 +18,6 @@ Lint Test:
     - pushes
     - merge_requests
   script:
+    - yarn global add pnpm
+    - pnpm install
     - pnpm lint:check
