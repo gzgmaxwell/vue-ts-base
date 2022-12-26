@@ -1,0 +1,33 @@
+image: node:14.18.0
+
+variables:
+  GIT_SSL_NO_VERIFY: '1'
+  DOCKER_DRIVER: 'overlay2'
+  DOCKER_TLS_CERTDIR: ''
+  TZ: 'Asia/Shanghai'
+
+stages:
+  - install
+  - test
+
+Install Dependencies:
+  stage: install
+  tags:
+    - test
+  only:
+    - main
+    - pushes
+    - merge_requests
+  script:
+    - pnpm install
+
+Lint Test:
+  stage: test
+  tags:
+    - test
+  only:
+    - main
+    - pushes
+    - merge_requests
+  script:
+    - pnpm lint:check
