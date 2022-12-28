@@ -13,10 +13,8 @@ Lint Test:
   stage: test
   tags:
     - test
-  only:
-    - main
-    - pushes
-    - merge_requests
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
   script:
     - yarn global add pnpm
     - pnpm install
