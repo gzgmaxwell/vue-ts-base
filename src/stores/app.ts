@@ -2,7 +2,7 @@ import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useAppStore = defineStore('app', () => {
-  const locale = ref('enUS')
+  const locale = ref('zhCN')
   const routeNameStack = ref<string[]>([])
 
   const changeLocale = (newLocale: string) => {
