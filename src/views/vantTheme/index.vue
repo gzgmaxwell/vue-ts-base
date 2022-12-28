@@ -4,16 +4,9 @@
     :theme="theme"
   >
     <van-row justify="center">
-      <van-col span="15"
-        ><h1 class="text-3xl font-bold underline">
-          tailwindcss andy!
-        </h1></van-col
-      >
-    </van-row>
-    <van-row justify="center">
-      <van-col span="6">span: 6</van-col>
-      <van-col span="6">span: 6</van-col>
-      <van-col span="6">span: 6</van-col>
+      <van-col span="18">
+        <h2 class="text-3xl font-bold underline">tailwindcss test!</h2>
+      </van-col>
     </van-row>
     <van-form>
       <van-field
@@ -61,18 +54,17 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import type { ConfigProviderTheme, ConfigProviderThemeVars } from 'vant'
+import { storeToRefs } from 'pinia'
+import { useCommonStore } from '@/stores'
 
-const theme = ref<ConfigProviderTheme>('light')
+const storeCommon = useCommonStore()
+
 const checked = ref(false)
-
+const { theme } = storeToRefs(storeCommon)
 const onUpdateValue = (newValue: boolean) => {
   checked.value = newValue
-  theme.value = newValue ? 'dark' : 'light'
-  if (newValue) {
-    document.querySelector('html')?.setAttribute('type', 'b')
-  } else {
-    document.querySelector('html')?.removeAttribute('type')
-  }
+  const value: ConfigProviderTheme = newValue ? 'dark' : 'light'
+  storeCommon.changeVantTheme(value)
 }
 
 const rate = ref(4)
@@ -91,4 +83,9 @@ const themeVars: ConfigProviderThemeVars = {
 }
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.remBox {
+  width: 200px;
+  height: 50px;
+}
+</style>
