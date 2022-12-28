@@ -53,6 +53,30 @@ const changeLocale = () => {
     >
       {{ $t('Vant lang') }}
     </van-button>
+    <van-button
+      class="home-view__button"
+      type="primary"
+      block
+      @click="() => router.push('/vantTheme')"
+    >
+      vantTheme
+    </van-button>
+    <van-button
+      class="home-view__button"
+      type="primary"
+      block
+      @click="() => router.push('/autoFlex')"
+    >
+      高度自适应
+    </van-button>
+    <van-button
+      class="home-view__button"
+      type="primary"
+      block
+      @click="() => router.push('/fullScreen')"
+    >
+      刘海屏
+    </van-button>
   </div>
 </template>
 
