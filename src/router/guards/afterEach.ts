@@ -9,6 +9,25 @@ export default class AfterEachGuard {
    * @param router 路由实例
    */
   public static load(router: Router) {
-    router.afterEach(() => {})
+    router.afterEach((to, from) => {
+      const toLevel = to.path.split('/').filter(v => !!v).length
+      const fromLevel = from.path.split('/').filter(v => !!v).length
+      let transition: string = ''
+
+      if (!toLevel && !fromLevel) {
+        // 是否是一级页面
+        transition = ''
+      } else if (toLevel === fromLevel) {
+        // 同级页面
+        transition = ''
+      } else if (toLevel > fromLevel) {
+        // 进入动画
+        transition = 'page-left'
+      } else if (toLevel < fromLevel) {
+        // 退出动画
+        transition = 'page-right'
+      }
+      to.meta.transition = transition
+    })
   }
 }

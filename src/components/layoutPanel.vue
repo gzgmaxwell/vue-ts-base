@@ -1,5 +1,5 @@
 <template>
-  <div class="flex h-full flex-col fixed">
+  <div class="flex h-full w-full flex-col fixed">
     <div class="flex-shrink-0">
       <!-- top 部分 -->
       <slot name="top"></slot>
