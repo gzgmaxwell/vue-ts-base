@@ -15,6 +15,7 @@ import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite'
 import { viteMockServe } from 'vite-plugin-mock'
 // @ts-ignore
 import postCssPxToRem from 'postcss-pxtorem'
+import legacy from '@vitejs/plugin-legacy'
 
 const IS_PRODUCTION = process.env.NODE_ENV === 'production'
 
@@ -42,6 +43,29 @@ const plugins: PluginOption[] = [
   viteMockServe({
     mockPath: 'mock', // mock 文件路径
     supportTs: true // 如果使用 js发开，则需要配置 supportTs 为 false
+  }),
+  legacy({
+    targets: ['defaults', 'ie >= 11', 'chrome 41'],
+    additionalLegacyPolyfills: ['regenerator-runtime/runtime'],
+    renderLegacyChunks: true,
+    polyfills: [
+      'es.symbol',
+      'es.array.filter',
+      'es.promise',
+      'es.promise.finally',
+      'es/map',
+      'es/set',
+      'es.array.for-each',
+      'es.object.define-properties',
+      'es.object.define-property',
+      'es.object.get-own-property-descriptor',
+      'es.object.get-own-property-descriptors',
+      'es.object.keys',
+      'es.object.to-string',
+      'web.dom-collections.for-each',
+      'esnext.global-this',
+      'esnext.string.match-all'
+    ]
   })
 ]
 
