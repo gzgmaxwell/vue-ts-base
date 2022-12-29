@@ -40,3 +40,11 @@ const fetchData = () => {
   line-height: 40px;
 }
 </style>
+<route>
+  {
+    name: "mock",
+    meta: {
+      requiresAuth: false,
+    }
+  }
+  </route>

@@ -89,3 +89,11 @@ const themeVars: ConfigProviderThemeVars = {
   height: 50px;
 }
 </style>
+<route>
+  {
+    name: "vantTheme",
+    meta: {
+      requiresAuth: false,
+    }
+  }
+  </route>

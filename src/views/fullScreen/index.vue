@@ -27,3 +27,11 @@
   background: #fff;
 }
 </style>
+<route>
+  {
+    name: "fullScreen",
+    meta: {
+      requiresAuth: false,
+    }
+  }
+  </route>
