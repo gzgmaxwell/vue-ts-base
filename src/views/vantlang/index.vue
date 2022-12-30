@@ -50,11 +50,8 @@ const currentDate = ref(['2021', '01', '01'])
 </template>
 
 <style lang="less"></style>
-<route>
-  {
-    name: "vantLang",
-    meta: {
-      requiresAuth: false,
-    }
-  }
-  </route>
+<route lang="yaml">
+name: vantLang
+meta:
+  requiresAuth: true
+</route>

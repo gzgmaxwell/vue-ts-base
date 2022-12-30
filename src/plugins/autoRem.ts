@@ -3,18 +3,10 @@
   自动设置根元素fontsize大小
   始终保持1rem = 16px
 */
-export default class AutoSetRootRem {
-  private static debounce(fn: Function, delay: number) {
-    let timer: number = 0
-    return () => {
-      if (timer) {
-        clearTimeout(timer)
-      }
-      timer = setTimeout(fn, delay)
-    }
-  }
+import { useDebounce } from '@/hooks'
 
-  private static bindAutoSetRootRem() {
+export default class AutoSetRootFontPlugin {
+  private static bind() {
     const doc = document.documentElement
     let width = doc.clientWidth
 
@@ -31,7 +23,7 @@ export default class AutoSetRootRem {
   static load() {
     window.addEventListener(
       'resize',
-      AutoSetRootRem.debounce(AutoSetRootRem.bindAutoSetRootRem, 100),
+      useDebounce(AutoSetRootFontPlugin.bind, 100),
       false
     )
   }

@@ -1,7 +1,5 @@
-import safeArea from './safeArea'
+import { safeArea } from './safeArea'
 
-const directives: any = {
+export const directives: any = {
   safeArea
 }
-
-export default directives

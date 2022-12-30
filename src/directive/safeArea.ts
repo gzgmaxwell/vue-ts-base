@@ -7,7 +7,7 @@ import type { Directive, DirectiveBinding } from 'vue'
     •自动判断是否启用安全区域；
     •自动插入安全区域占位和class，注意插入的占位dom是否会影响布局
 */
-const safeArea: Directive = {
+export const safeArea: Directive = {
   beforeMount(el: HTMLElement, binding: DirectiveBinding) {
     const safeAreaDom: HTMLElement = document.createElement('div')
 
@@ -29,5 +29,3 @@ const safeArea: Directive = {
     }
   }
 }
-
-export default safeArea

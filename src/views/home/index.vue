@@ -57,3 +57,9 @@ const router = useRouter()
   }
 }
 </style>
+
+<route lang="yaml">
+name: home
+meta:
+  requiresAuth: true
+</route>

@@ -27,11 +27,9 @@
   background: #fff;
 }
 </style>
-<route>
-  {
-    name: "fullScreen",
-    meta: {
-      requiresAuth: false,
-    }
-  }
-  </route>
+
+<route lang="yaml">
+name: fullScreen
+meta:
+  requiresAuth: true
+</route>

@@ -1,7 +1,7 @@
 <template>
   <van-config-provider
     :theme-vars="themeVars"
-    :theme="theme"
+    :theme="(theme as ConfigProviderTheme)"
   >
     <van-row justify="center">
       <van-col span="18">
@@ -89,11 +89,8 @@ const themeVars: ConfigProviderThemeVars = {
   height: 50px;
 }
 </style>
-<route>
-  {
-    name: "vantTheme",
-    meta: {
-      requiresAuth: false,
-    }
-  }
-  </route>
+<route lang="yaml">
+name: vantTheme
+meta:
+  requiresAuth: true
+</route>

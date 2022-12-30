@@ -1,5 +1,5 @@
 import type { App } from 'vue'
-import directives from '../directive'
+import { directives } from '../directive'
 
 export default class VuePlugin {
   private app!: App<Element>

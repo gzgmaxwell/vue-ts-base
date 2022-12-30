@@ -100,6 +100,10 @@
 
 此外，参照该规则 [vue/multi-word-component-names](https://eslint.vuejs.org/rules/multi-word-component-names.html)，我们不建议开发者使用单个词作为组件名，即使我们已在 ESLint 配置中禁用了该规则。
 
+#### layoutPanel 全局组件
+
+主要支持页面中下三行布局,上和下模块固定高度,中间自适应;使用方式:top，bottom 部分的高度为自身高度；content 部分自动占用剩余高度，超过该度的内容会自动滚动；整个组件的高度取决与父元素的高度；
+
 ### 静态资源
 
 我们建议您，将所有的静态资源放置于 `@/assets` 中。
