@@ -21,26 +21,29 @@ export default class BeforeEachGuard {
    */
   public static recordRouteNameStack(to: RouteLocationNormalized) {
     if (to.name !== undefined) {
-      const { routeNameStack } = useAppStore()
-      const IS_ROUTE_STACK_EMPTY = routeNameStack.length === 0
+      const appStore = useAppStore()
+      const tempRouteNameStack = [...appStore.routeNameStack]
+      const IS_ROUTE_STACK_EMPTY = tempRouteNameStack.length === 0
 
       if (IS_ROUTE_STACK_EMPTY) {
-        routeNameStack.push(to.name as string)
+        tempRouteNameStack.push(to.name as string)
       } else {
-        const NEW_PAGE_IN_ROUTE_STACK_POSITION = routeNameStack.indexOf(
+        const NEW_PAGE_IN_ROUTE_STACK_POSITION = tempRouteNameStack.indexOf(
           to.name as string
         )
         const IS_NEW_ROUTE = NEW_PAGE_IN_ROUTE_STACK_POSITION === -1
 
         if (IS_NEW_ROUTE) {
-          routeNameStack.push(to.name as string)
+          tempRouteNameStack.push(to.name as string)
         } else {
-          routeNameStack.splice(
+          tempRouteNameStack.splice(
             NEW_PAGE_IN_ROUTE_STACK_POSITION + 1,
-            routeNameStack.length - NEW_PAGE_IN_ROUTE_STACK_POSITION + 1
+            tempRouteNameStack.length - NEW_PAGE_IN_ROUTE_STACK_POSITION + 1
           )
         }
       }
+
+      appStore.routeNameStack = tempRouteNameStack
     }
   }
 }
