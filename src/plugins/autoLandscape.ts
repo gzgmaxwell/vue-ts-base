@@ -1,4 +1,4 @@
-import '../styles/landscape.less'
+import '@/styles/landscape/index.less'
 import { useAppStore } from '@/stores'
 import { useDebounce } from '@/hooks'
 /*

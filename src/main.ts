@@ -9,7 +9,7 @@ import AutoLandscape from '@/plugins/autoLandscape'
 import AutoRem from '@/plugins/autoRem'
 import PreventTouchZoom from '@/plugins/preventTouchZoom'
 
-import './styles/main.less'
+import './styles/index.less'
 
 const app = createApp(App)
 const vuePlugin = new VuePlugin(app)

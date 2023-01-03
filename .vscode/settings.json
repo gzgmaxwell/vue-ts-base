@@ -55,5 +55,8 @@
   "eslint.format.enable": true,
   "volar.format.initialIndent": {
     "html": true
+  },
+  "files.associations": {
+    "*.less": "postcss"
   }
 }
