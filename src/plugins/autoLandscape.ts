@@ -1,5 +1,5 @@
 import '../styles/landscape.less'
-import { useCommonStore } from '@/stores'
+import { useAppStore } from '@/stores'
 import { useDebounce } from '@/hooks'
 /*
   自适应横屏模式
@@ -8,7 +8,7 @@ import { useDebounce } from '@/hooks'
 
 export default class NoRotationPlugin {
   private static bind() {
-    const { changeLandscape } = useCommonStore()
+    const { changeLandscape } = useAppStore()
 
     const screenDirction = window.matchMedia('(min-aspect-ratio: 13/9)')
     if (screenDirction.matches) {

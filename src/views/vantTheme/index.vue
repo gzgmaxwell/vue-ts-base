@@ -55,9 +55,9 @@
 import { ref } from 'vue'
 import type { ConfigProviderTheme, ConfigProviderThemeVars } from 'vant'
 import { storeToRefs } from 'pinia'
-import { useCommonStore } from '@/stores'
+import { useAppStore } from '@/stores'
 
-const storeCommon = useCommonStore()
+const storeCommon = useAppStore()
 
 const checked = ref(false)
 const { theme } = storeToRefs(storeCommon)
