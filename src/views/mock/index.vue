@@ -1,5 +1,16 @@
 <template>
   <div>
+    <van-row justify="center">
+      <van-col span="7">
+        <van-button
+          size="mini"
+          type="primary"
+          @click="fetchData"
+          >mock 数据</van-button
+        >
+      </van-col>
+    </van-row>
+
     <div
       v-for="(item, index) in users"
       :key="index"
@@ -10,23 +21,17 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, onMounted, ref } from 'vue'
+<script setup lang="ts">
+import { ref } from 'vue'
 import axios from 'axios'
 
-export default defineComponent({
-  name: 'App',
-  setup() {
-    const users = ref([])
+const users = ref([])
 
-    onMounted(() => {
-      axios.get('/api/user').then(res => {
-        users.value = res.data.data
-      })
-    })
-    return { users }
-  }
-})
+const fetchData = () => {
+  axios.get('/api/user').then(res => {
+    users.value = res.data.data
+  })
+}
 </script>
 
 <style scoped>
@@ -35,3 +40,8 @@ export default defineComponent({
   line-height: 40px;
 }
 </style>
+<route lang="yaml">
+name: mock
+meta:
+  requiresAuth: true
+</route>
