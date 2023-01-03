@@ -1,50 +1,33 @@
 <template>
-  <div>
-    <div class="list-container">
-      <VueVirtualList :data="dataSource">
-        <template #default="{ item, index }">
-          <div class="item-container">
-            <div class="cell cell-index">{{ index + 1 }}</div>
-            <div class="cell">{{ item.name }}</div>
-            <div class="cell">{{ item.email }}</div>
-            <div class="cell">{{ item.address }}</div>
-          </div>
-        </template>
-      </VueVirtualList>
-    </div>
+  <div class="list-container">
+    <VirtualList :data="dataSource">
+      <template #default="{ item, index }">
+        <div class="item-container">
+          <div class="cell cell-index">{{ index + 1 }}</div>
+          <div class="cell">{{ item.name }}</div>
+          <div class="cell">{{ item.email }}</div>
+        </div>
+      </template>
+    </VirtualList>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-import VueVirtualList from './vue3-virtual-list.vue'
+<script lang="ts" setup>
+import { VirtualList } from 'vue3-virtual-list'
 
-export default defineComponent({
-  name: 'App',
-  components: {
-    VueVirtualList
-  },
-  data() {
-    return {
-      dataCount: 10000,
-      dataSource: Array.from({ length: 1000 }, (v, i) => ({
-        id: i + 1,
-        name: i,
-        email: i,
-        address: i,
-        img: i
-      }))
-    }
-  }
-})
+const dataSource = Array.from({ length: 10000 }, (v, i) => ({
+  index: i,
+  name: i,
+  email: i
+}))
 </script>
 
-<style lang="less">
+<style>
 .list-container {
   width: 100%;
-  height: 300px;
+  height: 600px;
   border: 2px solid #4caf50;
-  margin: 30px auto;
+  margin: 0 auto;
 }
 .item-container {
   height: 40px;
@@ -60,15 +43,9 @@ export default defineComponent({
   text-overflow: ellipsis;
   text-align: left;
   white-space: nowrap;
-  &.cell-index {
-    flex: none;
-    min-width: 60px;
-  }
+}
+.cell.cell-index {
+  flex: none;
+  min-width: 100px;
 }
 </style>
-
-<route lang="yaml">
-name: virtualList
-meta:
-  requiresAuth: true
-</route>

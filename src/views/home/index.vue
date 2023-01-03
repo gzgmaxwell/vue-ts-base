@@ -46,6 +46,14 @@ const router = useRouter()
     >
       刘海屏
     </van-button>
+    <van-button
+      class="home-view__button"
+      type="primary"
+      block
+      @click="() => router.push('/virtualList')"
+    >
+      虚拟列表
+    </van-button>
   </div>
 </template>
 
