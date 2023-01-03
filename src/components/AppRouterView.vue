@@ -1,6 +1,6 @@
 <template>
-  <RouterView v-slot="{ Component }">
-    <transition name="slide-left">
+  <RouterView v-slot="{ Component, route }">
+    <transition :name="(route.meta.transition as string)">
       <KeepAlive :include="routeNameStack">
         <component
           :is="Component"
@@ -19,36 +19,85 @@ import { useAppStore } from '@/stores'
 const routeNameStack = computed(() => useAppStore().routeNameStack)
 </script>
 
-<style lang="less" scoped>
-.router-view {
-  width: 100%;
-}
+<style lang="less">
+@page-animation-time: 0.3s;
 
-.slide-left-enter-active,
-.slide-left-leave-active,
-.slide-right-enter-active,
-.slide-right-leave-active {
+.page-right-enter-active,
+.page-right-leave-active,
+.page-left-enter-active,
+.page-left-leave-active {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
   will-change: transform;
-  transition: all 300ms cubic-bezier(0.55, 0, 0.1, 1);
-  position: absolute;
+  transition: all @page-animation-time;
   backface-visibility: hidden;
 }
-.slide-right-enter-active {
-  opacity: 0;
-  transform: translate3d(-100%, 0, 0);
+
+.page-right-enter-active {
+  animation: right-in @page-animation-time;
 }
-.slide-right-leave-active {
-  opacity: 0;
-  transform: translate3d(3%, 0, 0);
+
+.page-right-leave-active {
+  animation: left-out @page-animation-time;
 }
-.slide-left-enter-active {
-  opacity: 0;
-  transform: translate3d(100%, 0, 0);
+
+.page-left-enter-active {
+  animation: left-in @page-animation-time;
 }
-.slide-left-leave-active {
-  opacity: 0;
-  transform: translate3d(-3%, 0, 0);
+
+.page-left-leave-active {
+  animation: right-out @page-animation-time;
+}
+
+@keyframes left-in {
+  from {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0%, 0, 0);
+  }
+}
+
+@keyframes left-out {
+  from {
+    opacity: 1;
+    transform: translate3d(0%, 0, 0);
+  }
+
+  to {
+    opacity: 0.4;
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+@keyframes right-in {
+  from {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0%, 0, 0);
+  }
+}
+
+@keyframes right-out {
+  from {
+    opacity: 1;
+    transform: translate3d(0%, 0, 0);
+  }
+
+  to {
+    opacity: 0.4;
+    transform: translate3d(-100%, 0, 0);
+  }
 }
 </style>

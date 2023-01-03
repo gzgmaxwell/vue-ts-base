@@ -1,14 +1,7 @@
 <script setup lang="ts" name="HomeView">
 import { useRouter } from 'vue-router'
-import { useAppStore } from '@/stores'
 
 const router = useRouter()
-const appStore = useAppStore()
-
-const changeLocale = () => {
-  const NEW_LOCALE = appStore.locale === 'zhCN' ? 'enUS' : 'zhCN'
-  appStore.changeLocale(NEW_LOCALE)
-}
 </script>
 
 <template>
@@ -17,25 +10,9 @@ const changeLocale = () => {
       class="home-view__button"
       type="primary"
       block
-      @click="() => router.push('/counter')"
+      @click="() => router.push('/vantLang')"
     >
-      {{ $t('Navigate To New Page') }}
-    </van-button>
-    <van-button
-      class="home-view__button"
-      type="primary"
-      block
-      @click="changeLocale"
-    >
-      {{ $t('Change Language') }}
-    </van-button>
-    <van-button
-      class="home-view__button"
-      type="primary"
-      block
-      @click="() => router.push('/sfcI18N')"
-    >
-      SFC I18N {{ $t('Test') }}
+      vant 语言切换
     </van-button>
     <van-button
       class="home-view__button"
@@ -43,15 +20,31 @@ const changeLocale = () => {
       block
       @click="() => router.push('/mock')"
     >
-      {{ $t('Navigate To New Mock') }}
+      mock 数据
     </van-button>
     <van-button
       class="home-view__button"
       type="primary"
       block
-      @click="() => router.push('/vantlang')"
+      @click="() => router.push('/vantTheme')"
     >
-      {{ $t('Vant lang') }}
+      vant 黑暗模式
+    </van-button>
+    <van-button
+      class="home-view__button"
+      type="primary"
+      block
+      @click="() => router.push('/autoFlex')"
+    >
+      高度自适应
+    </van-button>
+    <van-button
+      class="home-view__button"
+      type="primary"
+      block
+      @click="() => router.push('/fullScreen')"
+    >
+      刘海屏
     </van-button>
   </div>
 </template>
@@ -64,3 +57,9 @@ const changeLocale = () => {
   }
 }
 </style>
+
+<route lang="yaml">
+name: home
+meta:
+  requiresAuth: true
+</route>
