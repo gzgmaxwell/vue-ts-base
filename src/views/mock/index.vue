@@ -11,12 +11,8 @@
       </van-col>
     </van-row>
 
-    <div
-      v-for="(item, index) in users"
-      :key="index"
-      class="mockBox"
-    >
-      {{ index + 1 }}-{{ item }}
+    <div class="mockBox">
+      {{ users.length ? JSON.stringify(users) : '' }}
     </div>
   </div>
 </template>
