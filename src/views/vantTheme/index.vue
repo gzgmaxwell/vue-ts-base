@@ -83,12 +83,7 @@ const themeVars: ConfigProviderThemeVars = {
 }
 </script>
 
-<style lang="less" scoped>
-.remBox {
-  width: 200px;
-  height: 50px;
-}
-</style>
+<style lang="less" scoped></style>
 <route lang="yaml">
 name: vantTheme
 meta:

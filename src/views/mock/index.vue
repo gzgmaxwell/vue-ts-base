@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mock">
     <van-row justify="center">
       <van-col span="7">
         <van-button
@@ -11,7 +11,7 @@
       </van-col>
     </van-row>
 
-    <div class="mockBox">
+    <div class="mock__main">
       {{ users.length ? JSON.stringify(users) : '' }}
     </div>
   </div>
@@ -30,10 +30,12 @@ const fetchData = () => {
 }
 </script>
 
-<style scoped>
-.mockBox {
-  text-align: center;
-  line-height: 40px;
+<style lang="less" scoped>
+.mock {
+  &__main {
+    text-align: center;
+    line-height: 40px;
+  }
 }
 </style>
 <route lang="yaml">
