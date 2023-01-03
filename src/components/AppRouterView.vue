@@ -1,6 +1,6 @@
 <template>
-  <RouterView v-slot="{ Component, route }">
-    <transition :name="(route.meta.transition as string)">
+  <RouterView v-slot="{ Component }">
+    <transition :name="transition">
       <KeepAlive :include="routeNameStack">
         <component
           :is="Component"
@@ -12,11 +12,25 @@
 </template>
 
 <script lang="ts" setup>
-import { computed } from 'vue'
+import { computed, watch, ref } from 'vue'
 import { RouterView } from 'vue-router'
 import { useAppStore } from '@/stores'
 
-const routeNameStack = computed(() => useAppStore().routeNameStack)
+const appStore = useAppStore()
+
+const routeNameStack = computed(() => appStore.routeNameStack)
+const transition = ref('')
+watch(
+  () => routeNameStack.value,
+  (newValue, oldValue) => {
+    const IS_PUSHED_ROUTER = newValue.length > oldValue.length
+    if (IS_PUSHED_ROUTER) {
+      transition.value = 'page-left'
+    } else {
+      transition.value = 'page-right'
+    }
+  }
+)
 </script>
 
 <style lang="less">
