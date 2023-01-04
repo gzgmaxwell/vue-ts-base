@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { watch } from 'vue'
+import { onMounted, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { Locale } from 'vant'
 import enUS from 'vant/es/locale/lang/en-US'
@@ -9,6 +9,9 @@ import { useAppStore } from './stores'
 
 const { locale: i18NLocale } = useI18n({ useScope: 'global' })
 const appStore = useAppStore()
+
+const removeGlobalLoading = () =>
+  document.getElementById('global-loading')?.remove()
 
 watch(
   () => appStore.locale,
@@ -21,6 +24,10 @@ watch(
     }
   }
 )
+
+onMounted(() => {
+  removeGlobalLoading()
+})
 </script>
 
 <template>
