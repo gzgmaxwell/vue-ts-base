@@ -9,8 +9,9 @@ import { useDebounce } from '@/hooks'
 export default class NoRotationPlugin {
   private static bind() {
     const { changeLandscape } = useAppStore()
+    // 如果宽高比大于13/9的话，显示这个内容
+    const screenDirction = window.matchMedia('(min-aspect-ratio: 1/1)')
 
-    const screenDirction = window.matchMedia('(min-aspect-ratio: 13/9)')
     if (screenDirction.matches) {
       document.documentElement.classList.add('landscape')
       changeLandscape(true)

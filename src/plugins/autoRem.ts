@@ -11,7 +11,7 @@ export default class AutoSetRootFontPlugin {
     let width = doc.clientWidth
 
     // 是否启用横屏兼容
-    const screenDirction = window.matchMedia('(min-aspect-ratio: 13/9)')
+    const screenDirction = window.matchMedia('(min-aspect-ratio: 1/1)')
     if (screenDirction.matches) {
       width = doc.clientHeight
     }
