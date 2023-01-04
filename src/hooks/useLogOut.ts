@@ -1,5 +1,5 @@
 import { useRouter } from 'vue-router'
-import { useUserStore } from '@/stores'
+import { useUserStore } from '@/stores/user'
 
 /**
  * 退出登陆

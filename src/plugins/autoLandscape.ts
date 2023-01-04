@@ -1,5 +1,5 @@
 import '@/styles/landscape/index.less'
-import { useAppStore } from '@/stores'
+import { useAppStore } from '@/stores/app'
 import { useDebounce } from '@/hooks'
 /*
   自适应横屏模式
