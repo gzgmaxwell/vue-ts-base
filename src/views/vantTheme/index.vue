@@ -55,9 +55,9 @@
 import { ref } from 'vue'
 import type { ConfigProviderTheme, ConfigProviderThemeVars } from 'vant'
 import { storeToRefs } from 'pinia'
-import { useCommonStore } from '@/stores'
+import { useAppStore } from '@/stores'
 
-const storeCommon = useCommonStore()
+const storeCommon = useAppStore()
 
 const checked = ref(false)
 const { theme } = storeToRefs(storeCommon)
@@ -83,12 +83,7 @@ const themeVars: ConfigProviderThemeVars = {
 }
 </script>
 
-<style lang="less" scoped>
-.remBox {
-  width: 200px;
-  height: 50px;
-}
-</style>
+<style lang="less" scoped></style>
 <route lang="yaml">
 name: vantTheme
 meta:

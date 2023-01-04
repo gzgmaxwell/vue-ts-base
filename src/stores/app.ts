@@ -5,31 +5,28 @@ import type { ConfigProviderTheme } from 'vant'
 export const useAppStore = defineStore('app', () => {
   const locale = ref('zhCN')
   const routeNameStack = ref<string[]>([])
+  const landscape = ref(false)
+  const theme = ref<ConfigProviderTheme>('light')
 
   const changeLocale = (newLocale: string) => {
     locale.value = newLocale
   }
 
+  const changeLandscape = (state: boolean) => {
+    landscape.value = state
+  }
+
+  const changeVantTheme = (themeParams: ConfigProviderTheme) => {
+    theme.value = themeParams
+  }
+
   return {
     locale,
     routeNameStack,
-    changeLocale
-  }
-})
-
-export const useCommonStore = defineStore('common', {
-  state: () => {
-    return {
-      landscape: false,
-      theme: 'light'
-    }
-  },
-  actions: {
-    changeLandscape(state: boolean) {
-      this.landscape = state
-    },
-    changeVantTheme(theme: ConfigProviderTheme) {
-      this.theme = theme
-    }
+    changeLocale,
+    landscape,
+    changeLandscape,
+    theme,
+    changeVantTheme
   }
 })
