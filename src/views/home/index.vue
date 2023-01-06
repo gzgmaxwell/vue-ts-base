@@ -54,6 +54,14 @@ const router = useRouter()
     >
       虚拟列表
     </van-button>
+    <van-button
+      class="home-view__button"
+      type="primary"
+      block
+      @click="() => router.push('/swiper')"
+    >
+      vant 轮播
+    </van-button>
   </div>
 </template>
 
