@@ -1,11 +1,11 @@
 <template>
   <div class="virtual">
     <van-swipe
+      v-if="isShow"
       ref="swipe"
       class="my-swipe"
       :loop="true"
-      :autoplay="3000"
-      :vertical="false"
+      :vertical="true"
       :landscape="landscape"
       indicator-color="white"
     >
@@ -21,6 +21,8 @@
 import { computed, ref, watch, type VNodeRef } from 'vue'
 import { useAppStore } from '../../stores/app'
 
+const isShow = ref(true)
+
 const appStore = useAppStore()
 const landscape = computed(() => appStore.landscape)
 const swipe = ref<VNodeRef>('')
@@ -28,6 +30,10 @@ watch(
   () => landscape.value,
   () => {
     swipe.value.resize()
+    isShow.value = false
+    setTimeout(() => {
+      isShow.value = true
+    }, 1)
   }
 )
 </script>
@@ -35,7 +41,7 @@ watch(
 <style scoped lang="less">
 .virtual {
   width: 100%;
-  height: 300px;
+  height: 100%;
   border: 2px solid #4caf50;
   margin: 0 auto;
   .my-swipe .van-swipe-item {
