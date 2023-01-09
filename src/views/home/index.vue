@@ -62,6 +62,14 @@ const router = useRouter()
     >
       vant 轮播
     </van-button>
+    <van-button
+      class="home-view__button"
+      type="primary"
+      block
+      @click="() => router.push('/tab')"
+    >
+      tab 标签
+    </van-button>
   </div>
 </template>
 
