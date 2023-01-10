@@ -24,10 +24,12 @@ watch(
   () => routeNameStack.value,
   (newValue, oldValue) => {
     const IS_PUSHED_ROUTER = newValue.length > oldValue.length
-    if (IS_PUSHED_ROUTER) {
-      transition.value = 'page-left'
-    } else {
-      transition.value = 'page-right'
+    if (oldValue.length) {
+      if (IS_PUSHED_ROUTER) {
+        transition.value = 'page-left'
+      } else {
+        transition.value = 'page-right'
+      }
     }
   }
 )
