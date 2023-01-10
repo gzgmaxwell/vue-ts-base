@@ -22,6 +22,7 @@ export default class NoRotationPlugin {
   }
 
   static load() {
+    NoRotationPlugin.bind()
     window.addEventListener('resize', useDebounce(NoRotationPlugin.bind, 10))
   }
 }
