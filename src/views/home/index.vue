@@ -70,6 +70,14 @@ const router = useRouter()
     >
       tab 标签
     </van-button>
+    <van-button
+      class="home-view__button"
+      type="primary"
+      block
+      @click="() => router.push('/list')"
+    >
+      list 列表
+    </van-button>
   </div>
 </template>
 
