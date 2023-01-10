@@ -1,5 +1,5 @@
 import '@/styles/landscape/index.less'
-import { useAppStore } from '@/stores'
+import { useAppStore } from '@/stores/app'
 import { useDebounce } from '@/hooks'
 /*
   自适应横屏模式
@@ -22,6 +22,7 @@ export default class NoRotationPlugin {
   }
 
   static load() {
+    NoRotationPlugin.bind()
     window.addEventListener('resize', useDebounce(NoRotationPlugin.bind, 10))
   }
 }

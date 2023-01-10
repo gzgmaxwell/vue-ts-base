@@ -14,7 +14,7 @@
 <script lang="ts" setup>
 import { computed, watch, ref } from 'vue'
 import { RouterView } from 'vue-router'
-import { useAppStore } from '@/stores'
+import { useAppStore } from '@/stores/app'
 
 const appStore = useAppStore()
 
