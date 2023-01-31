@@ -3,15 +3,12 @@
     <div class="list">sum:{{ list.length }}</div>
     <van-pull-refresh
       v-model="refreshing"
-      :landscape="landscape"
       @refresh="onRefresh"
     >
       <van-list
-        ref="listRef"
         v-model:loading="loading"
         :finished="finished"
         finished-text="确实没有更多了"
-        :landscape="landscape"
         @load="onLoad"
       >
         <van-cell
@@ -25,13 +22,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onUnmounted, watchEffect, computed, type VNodeRef } from 'vue'
-import { useAppStore } from '../../stores/app'
-
-const appStore = useAppStore()
-const landscape = computed(() => appStore.landscape)
-
-const listRef = ref<VNodeRef>('')
+import { ref } from 'vue'
 
 const list = ref<number[]>([])
 const loading = ref(false)
@@ -65,20 +56,6 @@ const onRefresh = () => {
   loading.value = true
   onLoad()
 }
-onUnmounted(() => {
-  document.documentElement.style.height = ''
-  document.documentElement.style.overflow = ''
-})
-
-watchEffect(() => {
-  if (landscape.value) {
-    document.documentElement.style.height = '100%'
-    document.documentElement.style.overflow = 'auto'
-  } else {
-    document.documentElement.style.height = ''
-    document.documentElement.style.overflow = ''
-  }
-})
 </script>
 <style scoped lang="less">
 .list {

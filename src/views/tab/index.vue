@@ -4,10 +4,8 @@
     :class="{ scrollY: landscape }"
   >
     <van-tabs
-      v-if="isShow"
       ref="tabRef"
       v-model:active="active"
-      :landscape="landscape"
     >
       <van-tab
         v-for="index in 10"
@@ -21,25 +19,13 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref, watch, type VNodeRef } from 'vue'
+import { computed, ref, type VNodeRef } from 'vue'
 import { useAppStore } from '../../stores/app'
 
 const appStore = useAppStore()
 const landscape = computed(() => appStore.landscape)
 const tabRef = ref<VNodeRef>('')
 const active = ref(0)
-const isShow = ref(true)
-
-watch(
-  () => landscape.value,
-  () => {
-    // tabRef.value.resize()
-    // isShow.value = false
-    // setTimeout(() => {
-    //   isShow.value = true
-    // }, 200)
-  }
-)
 </script>
 <style scoped lang="less">
 .tab {
