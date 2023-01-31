@@ -1,6 +1,6 @@
 import type { App } from 'vue'
 import { createI18n, type I18n } from 'vue-i18n'
-import { useAppStore } from '@/stores'
+import { useAppStore } from '@/stores/app'
 import { zhCN, enUS } from '@/i18n'
 
 export default class I18NPlugin {

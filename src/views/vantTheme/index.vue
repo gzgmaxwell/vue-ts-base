@@ -55,7 +55,7 @@
 import { ref } from 'vue'
 import type { ConfigProviderTheme, ConfigProviderThemeVars } from 'vant'
 import { storeToRefs } from 'pinia'
-import { useAppStore } from '@/stores'
+import { useAppStore } from '@/stores/app'
 
 const storeCommon = useAppStore()
 

@@ -14,7 +14,7 @@
 <script lang="ts" setup>
 import { computed, watch, ref } from 'vue'
 import { RouterView } from 'vue-router'
-import { useAppStore } from '@/stores'
+import { useAppStore } from '@/stores/app'
 
 const appStore = useAppStore()
 
@@ -24,10 +24,12 @@ watch(
   () => routeNameStack.value,
   (newValue, oldValue) => {
     const IS_PUSHED_ROUTER = newValue.length > oldValue.length
-    if (IS_PUSHED_ROUTER) {
-      transition.value = 'page-left'
-    } else {
-      transition.value = 'page-right'
+    if (oldValue.length) {
+      if (IS_PUSHED_ROUTER) {
+        transition.value = 'page-left'
+      } else {
+        transition.value = 'page-right'
+      }
     }
   }
 )

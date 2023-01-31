@@ -1,5 +1,5 @@
 import type { AxiosInstance, AxiosRequestConfig } from 'axios'
-import { useUserStore } from '@/stores'
+import { useUserStore } from '@/stores/user'
 
 export default class RequestInterceptor {
   public static load(axiosInstance: AxiosInstance) {

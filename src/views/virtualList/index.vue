@@ -1,53 +1,37 @@
-<template>
-  <div class="virtual">
-    <VirtualList :data="dataSource">
-      <template #default="{ item, index }">
-        <div class="virtual__box">
-          <div class="virtual__box__cell virtual__box__index">
-            {{ index + 1 }}
-          </div>
-          <div class="virtual__box__cell">{{ item.name }}</div>
-          <div class="virtual__box__cell">{{ item.email }}</div>
-        </div>
-      </template>
-    </VirtualList>
-  </div>
-</template>
+<script setup lang="ts">
+// @ts-ignore
+import VirtualList from 'vue3-virtual-scroll-list'
+import Item from './Items.vue'
 
-<script lang="ts" setup>
-import { VirtualList } from 'vue3-virtual-list'
-
-const dataSource = Array.from({ length: 10000 }, (v, i) => ({
-  index: i,
-  name: i,
-  email: i
+const items = Array.from({ length: 10000 }, (v, i) => ({
+  id: i,
+  text: `vue3-virtual-scroll-list-examples ${i}`,
+  desc: 'A vue3 component support big amount data list with high render performance and efficient.'
 }))
 </script>
 
-<style scoped lang="less">
-.virtual {
+<template>
+  <VirtualList
+    class="list-dynamic scroll-touch"
+    :data-key="'id'"
+    :data-sources="items"
+    :data-component="Item"
+    :estimate-size="80"
+    :item-class="'list-item-dynamic'"
+  />
+</template>
+
+<style lang="less">
+.list-dynamic {
   width: 100%;
   height: 600px;
-  border: 2px solid #4caf50;
-  margin: 0 auto;
-  &__box {
-    height: 40px;
+  border: 1px solid;
+  overflow-y: auto;
+  .list-item-dynamic {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    border-bottom: 1px solid #ccc;
-    &__cell {
-      margin: 0 8px;
-      flex: 1;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      text-align: left;
-      white-space: nowrap;
-    }
-    &__cell-index {
-      flex: none;
-      min-width: 100px;
-    }
+    padding: 1em;
+    border-bottom: 1px solid;
   }
 }
 </style>
