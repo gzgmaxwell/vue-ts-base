@@ -32,6 +32,7 @@ const fetchData = () => {
 
 <style lang="less" scoped>
 .mock {
+  padding-top: 40px;
   &__main {
     text-align: center;
     line-height: 40px;
