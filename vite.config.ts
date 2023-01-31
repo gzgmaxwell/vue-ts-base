@@ -41,8 +41,8 @@ const plugins: PluginOption[] = [
     include: resolve(dirname(fileURLToPath(import.meta.url)), 'src/i18n/*')
   }),
   viteMockServe({
-    mockPath: 'mock', // mock 文件路径
-    supportTs: true // 如果使用 js发开，则需要配置 supportTs 为 false
+    mockPath: 'mock',
+    supportTs: true
   }),
   legacy({
     targets: ['defaults', 'ie >= 11', 'chrome 41'],
