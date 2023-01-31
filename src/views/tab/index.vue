@@ -33,11 +33,11 @@ const isShow = ref(true)
 watch(
   () => landscape.value,
   () => {
-    tabRef.value.resize()
-    isShow.value = false
-    setTimeout(() => {
-      isShow.value = true
-    }, 1)
+    // tabRef.value.resize()
+    // isShow.value = false
+    // setTimeout(() => {
+    //   isShow.value = true
+    // }, 200)
   }
 )
 </script>

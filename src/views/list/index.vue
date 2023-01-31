@@ -3,6 +3,7 @@
     <div class="list">sum:{{ list.length }}</div>
     <van-pull-refresh
       v-model="refreshing"
+      :landscape="landscape"
       @refresh="onRefresh"
     >
       <van-list
