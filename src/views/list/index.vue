@@ -3,7 +3,6 @@
     <div class="list">sum:{{ list.length }}</div>
     <van-pull-refresh
       v-model="refreshing"
-      :landscape="landscape"
       @refresh="onRefresh"
     >
       <van-list
@@ -11,7 +10,6 @@
         v-model:loading="loading"
         :finished="finished"
         finished-text="确实没有更多了"
-        :landscape="landscape"
         @load="onLoad"
       >
         <van-cell
