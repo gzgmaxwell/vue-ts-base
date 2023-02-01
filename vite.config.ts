@@ -7,7 +7,7 @@ import { visualizer } from 'rollup-plugin-visualizer'
 import tailwindcss from 'tailwindcss'
 import autoprefixer from 'autoprefixer'
 
-import { VantResolver } from 'unplugin-vue-components/resolvers'
+import { VantPlusResolver } from '@jjlc/unplugin-vant-plus/resolvers'
 import Components from 'unplugin-vue-components/vite'
 import Pages from 'vite-plugin-pages'
 import VueSetupExtend from 'vite-plugin-vue-setup-extend'
@@ -24,7 +24,7 @@ const plugins: PluginOption[] = [
   vueJsx(),
   Components({
     dirs: ['src/components'],
-    resolvers: [VantResolver()],
+    resolvers: [VantPlusResolver()],
     extensions: ['vue'],
     dts: 'src/components.d.ts'
   }),

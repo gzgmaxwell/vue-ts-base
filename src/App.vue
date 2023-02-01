@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { onMounted, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { Locale } from 'vant'
-import enUS from 'vant/es/locale/lang/en-US'
-import zhCN from 'vant/es/locale/lang/zh-CN'
+import { Locale } from '@jjlc/vant-plus'
+import enUS from '@jjlc/vant-plus/es/locale/lang/en-US'
+import zhCN from '@jjlc/vant-plus/es/locale/lang/zh-CN'
 
 import { useAppStore } from '@/stores/app'
 
