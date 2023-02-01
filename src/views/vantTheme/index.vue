@@ -53,7 +53,10 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import type { ConfigProviderTheme, ConfigProviderThemeVars } from 'vant'
+import type {
+  ConfigProviderTheme,
+  ConfigProviderThemeVars
+} from '@jjlc/vant-plus'
 import { storeToRefs } from 'pinia'
 import { useAppStore } from '@/stores/app'
 

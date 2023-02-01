@@ -1,4 +1,4 @@
-import 'vant/es/toast/style'
-import 'vant/es/dialog/style'
-import 'vant/es/notify/style'
-import 'vant/es/image-preview/style'
+import '@jjlc/vant-plus/es/toast/style'
+import '@jjlc/vant-plus/es/dialog/style'
+import '@jjlc/vant-plus/es/notify/style'
+import '@jjlc/vant-plus/es/image-preview/style'

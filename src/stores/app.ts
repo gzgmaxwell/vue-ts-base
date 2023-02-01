@@ -1,6 +1,6 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
-import type { ConfigProviderTheme } from 'vant'
+import type { ConfigProviderTheme } from '@jjlc/vant-plus'
 
 export const useAppStore = defineStore('app', () => {
   const locale = ref('zhCN')
