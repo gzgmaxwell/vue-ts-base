@@ -1,54 +1,54 @@
 <template>
-  <van-config-provider
-    :theme-vars="themeVars"
-    :theme="(theme as ConfigProviderTheme)"
-  >
-    <van-row justify="center">
-      <van-col span="18">
-        <h2 class="text-3xl font-bold underline">tailwindcss test!</h2>
-      </van-col>
-    </van-row>
-    <van-form>
-      <van-field
-        name="checked"
-        label="暗黑模式"
+  <div class="bg-white dark:bg-slate-800 min-h-screen">
+    <van-config-provider
+      :theme-vars="themeVars"
+      :theme="(theme as ConfigProviderTheme)"
+    >
+      <div
+        class="bg-white dark:bg-slate-800 px-6 py-8 ring-1 ring-slate-900/5 shadow-xl"
       >
-        <template #input>
-          <van-switch
-            :model-value="checked"
-            @update:model-value="onUpdateValue"
-          />
-        </template>
-      </van-field>
-
-      <van-field
-        name="rate"
-        label="评分"
-      >
-        <template #input>
-          <van-rate v-model="rate" />
-        </template>
-      </van-field>
-      <van-field
-        name="slider"
-        label="滑块"
-      >
-        <template #input>
-          <van-slider v-model="slider" />
-        </template>
-      </van-field>
-      <div style="margin: 16px">
-        <van-button
-          round
-          block
-          type="primary"
-          native-type="submit"
+        <h3
+          class="text-slate-900 dark:text-white mt-5 text-base font-medium tracking-tight"
         >
-          提交
-        </van-button>
+          tailwind theme demo
+        </h3>
+        <p class="text-slate-500 dark:text-slate-400 mt-2 text-sm">
+          The Zero Gravity Pen can be used to write in any orientation,
+          including upside-down. It even works in outer space.
+        </p>
       </div>
-    </van-form>
-  </van-config-provider>
+      <van-form>
+        <van-field
+          name="checked"
+          label="暗黑模式"
+        >
+          <template #input>
+            <van-switch
+              :model-value="checked"
+              @update:model-value="onUpdateValue"
+            />
+          </template>
+        </van-field>
+
+        <van-field
+          name="rate"
+          label="评分"
+        >
+          <template #input>
+            <van-rate v-model="rate" />
+          </template>
+        </van-field>
+        <van-field
+          name="slider"
+          label="滑块"
+        >
+          <template #input>
+            <van-slider v-model="slider" />
+          </template>
+        </van-field>
+      </van-form>
+    </van-config-provider>
+  </div>
 </template>
 
 <script lang="ts" setup>
@@ -68,6 +68,11 @@ const onUpdateValue = (newValue: boolean) => {
   checked.value = newValue
   const value: ConfigProviderTheme = newValue ? 'dark' : 'light'
   storeCommon.changeVantTheme(value)
+  if (value === 'dark') {
+    document.documentElement.classList.add('dark')
+  } else {
+    document.documentElement.classList.remove('dark')
+  }
 }
 
 const rate = ref(4)
