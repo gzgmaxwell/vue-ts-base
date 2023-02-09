@@ -5,13 +5,11 @@
   >
     <van-tabs
       ref="tabRef"
-      v-model:active="active"
-      type="card"
-      :before-change="beforeChange"
-      @click-tab="onClickTab"
+      scrollspy
+      sticky
     >
       <van-tab
-        v-for="index in 10"
+        v-for="index in 100"
         :key="index"
         :title="'标签 ' + index"
       >
@@ -23,25 +21,16 @@
 
 <script setup lang="ts">
 import { computed, ref, type VNodeRef } from 'vue'
-import { showToast } from '@jjlc/vant-plus/es'
 import { useAppStore } from '../../stores/app'
 
 const appStore = useAppStore()
 const landscape = computed(() => appStore.landscape)
 const tabRef = ref<VNodeRef>('')
-const active = ref(0)
-const onClickTab = (e: any) => showToast(e.title)
-const beforeChange = (index: number) => {
-  // 返回 false 表示阻止此次切换
-  if (index === 1) {
-    return true
-  }
-  return true
-}
 </script>
 <style scoped lang="less">
 .tab {
   padding: 20px;
+  height: 100%;
 }
 .scrollY {
   /deep/.van-tabs__wrap {
