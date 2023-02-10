@@ -14,51 +14,50 @@
 
 ### 项目基础框架
 
-- Vue3
-- Vue Router v4
-- Pinia v2
-- Vite v4
-- Typescript v4.7.4
+- [Vue 3](github.com/vuejs/core)
+- [Vue Router](github.com/vuejs/router) v4
+- [Pinia](github.com/vuejs/pinia) v2
+- [Vite](github.com/vitejs/vite) v4
+- [Typescript](github.com/Microsoft/TypeScript) v4.7.4
 
 ### UI 样式相关
 
-- Vant v4
-- Tailwind v3
+- [Vant](https://github.com/youzan/vant) v4
+- [Tailwind](https://github.com/tailwindlabs/tailwindcss) v3
 - LESS
-- postcss-px-to-viewport
+- [postcss-px-to-viewport](https://github.com/evrone/postcss-px-to-viewport)
 
 ### HTTP 请求库
 
-- Axios
+- [Axios](https://github.com/axios/axios)
 
 ### Git 提交规范管控
 
-- git-cz
-- commitizen
-- husky
+- [commitizen](https://github.com/commitizen-tools/commitizen)
+- [husky](https://github.com/typicode/husky)
 
 ### 代码规范管控
 
-- ESLint
-  - Airbnb
-- Prettier
-- Lint Staged
-- Editor Config
+- [ESLint](https://github.com/eslint/eslint)
+  - [Airbnb](github.com/airbnb/javascript)
+- [Prettier](github.com/prettier/prettier)
+- [Lint Staged](github.com/okonet/lint-staged)
+- [Editor Config](https://github.com/editorconfig/editorconfig-core-js)
 
 ### 包分析工具
 
-- rollup-plugin-visualizer
+- [rollup-plugin-visualizer](github.com/btd/rollup-plugin-visualizer)
 
 ### 多语言解决方案
 
-- vue-i18n v9
+- [vue-i18n](github.com/intlify/vue-i18n-next) v9
 
 ### 自动加载配置
 
 - 路由自动化加载
-  - vite-plugin-pages
+  - [vite-plugin-pages](github.com/hannoeru/vite-plugin-pages)
 - 组件自动化加载
-  - unplugin-vue-components
+  - [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components)
 
 ### 环境变量管控
 
@@ -66,7 +65,7 @@
 
 ### Mock
 
-- mock.js
+- [Mock.js](github.com/nuysoft/Mock)
 
 ## 架构说明
 
