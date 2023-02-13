@@ -66,6 +66,14 @@ const router = useRouter()
       class="home-view__button"
       type="primary"
       block
+      @click="() => router.push({ name: 'SwiperHorizontal' })"
+    >
+      vant horizontal 轮播
+    </van-button>
+    <van-button
+      class="home-view__button"
+      type="primary"
+      block
       @click="() => router.push({ name: 'Tab' })"
     >
       tab 标签
