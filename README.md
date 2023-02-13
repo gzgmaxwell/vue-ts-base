@@ -14,51 +14,50 @@
 
 ### 项目基础框架
 
-- Vue3
-- Vue Router v4
-- Pinia v2
-- Vite v4
-- Typescript v4.7.4
+- [Vue 3](github.com/vuejs/core)
+- [Vue Router](github.com/vuejs/router) v4
+- [Pinia](github.com/vuejs/pinia) v2
+- [Vite](github.com/vitejs/vite) v4
+- [Typescript](github.com/Microsoft/TypeScript) v4.7.4
 
 ### UI 样式相关
 
-- Vant v4
-- Tailwind v3
+- [Vant](https://github.com/youzan/vant) v4
+- [Tailwind](https://github.com/tailwindlabs/tailwindcss) v3
 - LESS
-- postcss-px-to-viewport
+- [postcss-px-to-viewport](https://github.com/evrone/postcss-px-to-viewport)
 
 ### HTTP 请求库
 
-- Axios
+- [Axios](https://github.com/axios/axios)
 
 ### Git 提交规范管控
 
-- git-cz
-- commitizen
-- husky
+- [commitizen](https://github.com/commitizen-tools/commitizen)
+- [husky](https://github.com/typicode/husky)
 
 ### 代码规范管控
 
-- ESLint
-  - Airbnb
-- Prettier
-- Lint Staged
-- Editor Config
+- [ESLint](https://github.com/eslint/eslint)
+  - [Airbnb](github.com/airbnb/javascript)
+- [Prettier](github.com/prettier/prettier)
+- [Lint Staged](github.com/okonet/lint-staged)
+- [Editor Config](https://github.com/editorconfig/editorconfig-core-js)
 
 ### 包分析工具
 
-- rollup-plugin-visualizer
+- [rollup-plugin-visualizer](github.com/btd/rollup-plugin-visualizer)
 
 ### 多语言解决方案
 
-- vue-i18n v9
+- [vue-i18n](github.com/intlify/vue-i18n-next) v9
 
 ### 自动加载配置
 
 - 路由自动化加载
-  - vite-plugin-pages
+  - [vite-plugin-pages](github.com/hannoeru/vite-plugin-pages)
 - 组件自动化加载
-  - unplugin-vue-components
+  - [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components)
 
 ### 环境变量管控
 
@@ -66,9 +65,111 @@
 
 ### Mock
 
-- mock.js
+- [Mock.js](github.com/nuysoft/Mock)
 
 ## 架构说明
+
+### 项目目录结构概述
+
+```
+|-- .husky/                     👉  Git 钩子配置目录
+|
+|-- .vscode/                    👉  VSCode 配置目录
+|
+|-- mock/                       👉  Mock 数据配置目录
+|
+|-- public/                     👉  静态文件放置目录
+|
+|-- src/                        👉  静态文件放置目录
+|
+    |-- asset/                  👉  资源文件目录
+    |
+    |-- components/             👉  公共视图组件目录
+    |
+    |-- decorators/             👉  公共装饰器目录
+    |
+    |-- directive/              👉  公共自定义指令目录
+    |
+    |-- hooks/                  👉  公共 Hook 目录
+    |
+    |-- i18n/                   👉  公共翻译文件目录
+    |
+    |-- plugins/                👉  插件配置目录
+    |
+    |-- router/                 👉  路由配置目录
+    |
+    |-- stores/                 👉  数据仓库配置目录
+    |
+    |-- styles/                 👉  公共样式配置目录
+    |
+        |-- base/               👉  基础全局样式配置
+        |
+        |-- landscape/          👉  横屏支持相关全局样式配置
+        |
+        |-- tailwind/           👉  Tailwind 相关全局样式配置
+        |
+        |-- vant/               👉  Vant 相关全局样式配置
+        |
+        |-- index.less          👉  公共样式入口文件
+    |
+    |-- views/                  👉  视图文件目录
+    |
+    |-- App.vue                 👉  视图文件全局入口
+    |
+    |-- components.d.ts         👉  组件 Types 配置
+    |
+    |-- main.ts                 👉  项目入口文件
+    |
+    |-- shims-vue.d.ts          👉  Vue 文件 Types 配置
+    |
+    |-- vue3-vi.d.ts            👉  vue3-virtual-scroll-list 依赖 Types 配置
+|
+|-- commitlintrc.cjs            👉  Commit Lint 配置文件
+|
+|-- .czrc                       👉  Git Commit向导文本配置文件
+|
+|-- .editorconfig               👉  Editor Config 配置文件
+|
+|-- .env                        👉  公共环境变量
+|
+|-- .env.development            👉  开发环境变量
+|
+|-- .env.preview                👉  测试环境变量
+|
+|-- .env.production             👉  生产环境变量
+|
+|-- .eslintrc.cjs               👉  ESLint 配置文件
+|
+|-- .gitgnore                   👉  Git 文件排除配置文件
+|
+|-- .gitlab-ci.yml              👉  GitLab CI 配置文件
+|
+|-- .prettierrc.json            👉  Prettier 配置文件
+|
+|-- .env.d.ts                   👉  环境配置 Types 配置文件
+|
+|-- index.html                  👉  项目 HTML 入口
+|
+|-- package.json                👉  NPM 配置文件
+|
+|-- pnpm-lock.yaml              👉  PNPM 锁文件
+|
+|-- README.md                   👉  项目文档
+|
+|-- tailwind.config.js          👉  Tailwind 配置文件
+|
+|-- tsconfig.app.json           👉  项目主体 TypeScript 相关配置
+|
+|-- tsconfig.config.json        👉  配置文件 TypeScript 相关配置
+|
+|-- tsconfig.json               👉  TypeScript 配置文件入口
+|
+|-- tsconfig.vitest.json        👉  公共 TypeScript 相关配置
+|
+|-- vite.config.ts              👉  Vite配置文件
+
+```
+
 
 ### 路由配置
 
