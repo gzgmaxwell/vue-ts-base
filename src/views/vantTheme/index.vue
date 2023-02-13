@@ -2,7 +2,7 @@
   <div class="bg-white dark:bg-slate-800 min-h-screen">
     <van-config-provider
       :theme-vars="themeVars"
-      :theme="(theme as ConfigProviderTheme)"
+      :theme="theme"
     >
       <div
         class="bg-white dark:bg-slate-800 px-6 py-8 ring-1 ring-slate-900/5 shadow-xl"
@@ -60,14 +60,14 @@ import type {
 import { storeToRefs } from 'pinia'
 import { useAppStore } from '@/stores/app'
 
-const storeCommon = useAppStore()
+const appStore = useAppStore()
 
 const checked = ref(false)
-const { theme } = storeToRefs(storeCommon)
+const { theme } = storeToRefs(appStore)
 const onUpdateValue = (newValue: boolean) => {
   checked.value = newValue
   const value: ConfigProviderTheme = newValue ? 'dark' : 'light'
-  storeCommon.changeVantTheme(value)
+  appStore.changeVantTheme(value)
   if (value === 'dark') {
     document.documentElement.classList.add('dark')
   } else {
