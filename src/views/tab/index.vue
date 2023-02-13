@@ -44,7 +44,7 @@ const beforeChange = (index: number) => {
   padding: 20px;
 }
 .scrollY {
-  /deep/.van-tabs__wrap {
+  :deep(.van-tabs__wrap) {
     .van-tabs__nav--complete {
       overflow-y: auto !important;
     }
