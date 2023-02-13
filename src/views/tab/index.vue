@@ -51,3 +51,9 @@ const beforeChange = (index: number) => {
   }
 }
 </style>
+
+<route lang="yaml">
+name: Tab
+meta:
+  requiresAuth: true
+</route>

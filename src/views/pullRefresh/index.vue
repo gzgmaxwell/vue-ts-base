@@ -33,6 +33,7 @@ const change = (e: any) => {
   }
 }
 </script>
+
 <style scoped lang="less">
 .pull {
   padding: 50px;
@@ -41,3 +42,9 @@ const change = (e: any) => {
   }
 }
 </style>
+
+<route lang="yaml">
+name: PullRefresh
+meta:
+  requiresAuth: true
+</route>

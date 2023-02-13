@@ -27,6 +27,7 @@ const appStore = useAppStore()
 const landscape = computed(() => appStore.landscape)
 const tabRef = ref<VNodeRef>('')
 </script>
+
 <style scoped lang="less">
 .tab {
   padding: 20px;
@@ -40,3 +41,9 @@ const tabRef = ref<VNodeRef>('')
   }
 }
 </style>
+
+<route lang="yaml">
+name: TabScroll
+meta:
+  requiresAuth: true
+</route>

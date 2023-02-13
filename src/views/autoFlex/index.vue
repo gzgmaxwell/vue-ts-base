@@ -12,8 +12,9 @@
     <template #bottom><div class="bg-yellow-500 p-20"></div></template>
   </layout-panel>
 </template>
+
 <route lang="yaml">
-name: autoFlex
+name: AutoFlex
 meta:
   requiresAuth: true
 </route>

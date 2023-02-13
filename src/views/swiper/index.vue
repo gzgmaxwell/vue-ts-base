@@ -46,3 +46,9 @@ const onChange = (index: number) => {
   }
 }
 </style>
+
+<route lang="yaml">
+name: Swiper
+meta:
+  requiresAuth: true
+</route>

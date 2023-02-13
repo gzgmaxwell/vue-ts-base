@@ -92,8 +92,9 @@ const themeVars: ConfigProviderThemeVars = {
 </script>
 
 <style lang="less" scoped></style>
+
 <route lang="yaml">
-name: vantTheme
+name: VantTheme
 meta:
   requiresAuth: true
 </route>
