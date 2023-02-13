@@ -74,6 +74,14 @@ const router = useRouter()
       class="home-view__button"
       type="primary"
       block
+      @click="() => router.push('/tabscroll')"
+    >
+      tabscroll 标签
+    </van-button>
+    <van-button
+      class="home-view__button"
+      type="primary"
+      block
       @click="() => router.push('/list')"
     >
       list 列表
