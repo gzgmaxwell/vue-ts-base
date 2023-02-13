@@ -34,7 +34,7 @@ const router = useRouter()
       class="home-view__button"
       type="primary"
       block
-      @click="() => router.push('/autoFlex')"
+      @click="() => router.push({ name: 'AutoFlex' })"
     >
       高度自适应
     </van-button>
