@@ -35,3 +35,9 @@ const items = Array.from({ length: 10000 }, (v, i) => ({
   }
 }
 </style>
+
+<route lang="yaml">
+name: VirtualList
+meta:
+  requiresAuth: true
+</route>

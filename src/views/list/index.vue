@@ -62,3 +62,9 @@ const onRefresh = () => {
   padding: 20px;
 }
 </style>
+
+<route lang="yaml">
+name: List
+meta:
+  requiresAuth: true
+</route>
