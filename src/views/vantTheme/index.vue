@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white dark:bg-slate-800 min-h-screen">
+  <div class="bg-white dark:bg-slate-800 min-h-screen h-full">
     <van-config-provider
       :theme-vars="themeVars"
       :theme="theme"
