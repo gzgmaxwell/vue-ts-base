@@ -34,9 +34,10 @@ const onChange = (index: number) => {
 <style scoped lang="less">
 .virtual {
   width: 100%;
-  height: 100%;
+  height: 500px;
   border: 2px solid #4caf50;
   margin: 0 auto;
+  overflow: hidden;
   .my-swipe .van-swipe-item {
     color: #fff;
     font-size: 20px;
