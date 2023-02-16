@@ -14,7 +14,11 @@ declare module '@vue/runtime-core' {
     IconEcosystem: typeof import('./components/icons/IconEcosystem.vue')['default']
     IconSupport: typeof import('./components/icons/IconSupport.vue')['default']
     IconTooling: typeof import('./components/icons/IconTooling.vue')['default']
+<<<<<<< HEAD
     LayoutPanel: typeof import('./components/layoutPanel.vue')['default']
+=======
+    LayoutPanel: typeof import('./components/LayoutPanel.vue')['default']
+>>>>>>> ac675d38006f82d1095197f51fa0cca2bb7480ce
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     VanButton: typeof import('@jjlc/vant-plus/es')['Button']
@@ -25,6 +29,10 @@ declare module '@vue/runtime-core' {
     VanField: typeof import('@jjlc/vant-plus/es')['Field']
     VanForm: typeof import('@jjlc/vant-plus/es')['Form']
     VanList: typeof import('@jjlc/vant-plus/es')['List']
+<<<<<<< HEAD
+=======
+    VanPopup: typeof import('@jjlc/vant-plus/es')['Popup']
+>>>>>>> ac675d38006f82d1095197f51fa0cca2bb7480ce
     VanPullRefresh: typeof import('@jjlc/vant-plus/es')['PullRefresh']
     VanRate: typeof import('@jjlc/vant-plus/es')['Rate']
     VanRow: typeof import('@jjlc/vant-plus/es')['Row']

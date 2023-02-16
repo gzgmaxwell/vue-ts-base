@@ -16,8 +16,18 @@ export const useAppStore = defineStore('app', () => {
     landscape.value = state
   }
 
+<<<<<<< HEAD
   const changeVantTheme = (themeParams: ConfigProviderTheme) => {
     theme.value = themeParams
+=======
+  const changeTheme = (themeParams: ConfigProviderTheme) => {
+    theme.value = themeParams
+    if (themeParams === 'dark') {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+>>>>>>> ac675d38006f82d1095197f51fa0cca2bb7480ce
   }
 
   return {
@@ -27,6 +37,10 @@ export const useAppStore = defineStore('app', () => {
     landscape,
     changeLandscape,
     theme,
+<<<<<<< HEAD
     changeVantTheme
+=======
+    changeTheme
+>>>>>>> ac675d38006f82d1095197f51fa0cca2bb7480ce
   }
 })

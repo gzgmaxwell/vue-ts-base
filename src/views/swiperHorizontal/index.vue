@@ -5,7 +5,8 @@
       class="my-swipe"
       :loop="true"
       :autoplay="3000"
-      :vertical="true"
+      :width="375"
+      :vertical="false"
       indicator-color="white"
       touchable
       @change="onChange"
@@ -34,16 +35,9 @@ const onChange = (index: number) => {
 <style scoped lang="less">
 .virtual {
   width: 100%;
-<<<<<<< HEAD
   height: 100%;
   border: 2px solid #4caf50;
   margin: 0 auto;
-=======
-  height: 500px;
-  border: 2px solid #4caf50;
-  margin: 0 auto;
-  overflow: hidden;
->>>>>>> ac675d38006f82d1095197f51fa0cca2bb7480ce
   .my-swipe .van-swipe-item {
     color: #fff;
     font-size: 20px;
@@ -53,12 +47,9 @@ const onChange = (index: number) => {
   }
 }
 </style>
-<<<<<<< HEAD
-=======
 
 <route lang="yaml">
-name: Swiper
+name: SwiperHorizontal
 meta:
   requiresAuth: true
 </route>
->>>>>>> ac675d38006f82d1095197f51fa0cca2bb7480ce

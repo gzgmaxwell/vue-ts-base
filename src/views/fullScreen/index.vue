@@ -27,7 +27,11 @@
 </style>
 
 <route lang="yaml">
+<<<<<<< HEAD
 name: fullScreen
+=======
+name: FullScreen
+>>>>>>> ac675d38006f82d1095197f51fa0cca2bb7480ce
 meta:
   requiresAuth: true
 </route>

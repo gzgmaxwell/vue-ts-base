@@ -39,8 +39,14 @@ const fetchData = () => {
   }
 }
 </style>
+<<<<<<< HEAD
 <route lang="yaml">
 name: mock
+=======
+
+<route lang="yaml">
+name: Mock
+>>>>>>> ac675d38006f82d1095197f51fa0cca2bb7480ce
 meta:
   requiresAuth: true
 </route>

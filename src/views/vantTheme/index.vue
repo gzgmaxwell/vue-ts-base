@@ -1,8 +1,15 @@
 <template>
+<<<<<<< HEAD
   <div class="bg-white dark:bg-slate-800 min-h-screen">
     <van-config-provider
       :theme-vars="themeVars"
       :theme="(theme as ConfigProviderTheme)"
+=======
+  <div class="bg-white dark:bg-slate-800 min-h-screen h-full">
+    <van-config-provider
+      :theme-vars="themeVars"
+      :theme="theme"
+>>>>>>> ac675d38006f82d1095197f51fa0cca2bb7480ce
     >
       <div
         class="bg-white dark:bg-slate-800 px-6 py-8 ring-1 ring-slate-900/5 shadow-xl"
@@ -60,6 +67,7 @@ import type {
 import { storeToRefs } from 'pinia'
 import { useAppStore } from '@/stores/app'
 
+<<<<<<< HEAD
 const storeCommon = useAppStore()
 
 const checked = ref(false)
@@ -73,6 +81,16 @@ const onUpdateValue = (newValue: boolean) => {
   } else {
     document.documentElement.classList.remove('dark')
   }
+=======
+const appStore = useAppStore()
+
+const checked = ref(false)
+const { theme } = storeToRefs(appStore)
+const onUpdateValue = (newValue: boolean) => {
+  checked.value = newValue
+  const value: ConfigProviderTheme = newValue ? 'dark' : 'light'
+  appStore.changeTheme(value)
+>>>>>>> ac675d38006f82d1095197f51fa0cca2bb7480ce
 }
 
 const rate = ref(4)
@@ -92,8 +110,14 @@ const themeVars: ConfigProviderThemeVars = {
 </script>
 
 <style lang="less" scoped></style>
+<<<<<<< HEAD
 <route lang="yaml">
 name: vantTheme
+=======
+
+<route lang="yaml">
+name: VantTheme
+>>>>>>> ac675d38006f82d1095197f51fa0cca2bb7480ce
 meta:
   requiresAuth: true
 </route>

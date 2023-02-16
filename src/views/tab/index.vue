@@ -44,10 +44,23 @@ const beforeChange = (index: number) => {
   padding: 20px;
 }
 .scrollY {
+<<<<<<< HEAD
   /deep/.van-tabs__wrap {
+=======
+  :deep(.van-tabs__wrap) {
+>>>>>>> ac675d38006f82d1095197f51fa0cca2bb7480ce
     .van-tabs__nav--complete {
       overflow-y: auto !important;
     }
   }
 }
 </style>
+<<<<<<< HEAD
+=======
+
+<route lang="yaml">
+name: Tab
+meta:
+  requiresAuth: true
+</route>
+>>>>>>> ac675d38006f82d1095197f51fa0cca2bb7480ce
