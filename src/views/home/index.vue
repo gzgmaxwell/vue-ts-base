@@ -102,6 +102,14 @@ const router = useRouter()
     >
       pullRefresh 下拉刷新
     </van-button>
+    <van-button
+      class="home-view__button"
+      type="primary"
+      block
+      @click="() => router.push({ name: 'VanPopup' })"
+    >
+      vanPopup
+    </van-button>
   </div>
 </template>
 

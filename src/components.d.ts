@@ -25,6 +25,7 @@ declare module '@vue/runtime-core' {
     VanField: typeof import('@jjlc/vant-plus/es')['Field']
     VanForm: typeof import('@jjlc/vant-plus/es')['Form']
     VanList: typeof import('@jjlc/vant-plus/es')['List']
+    VanPopup: typeof import('@jjlc/vant-plus/es')['Popup']
     VanPullRefresh: typeof import('@jjlc/vant-plus/es')['PullRefresh']
     VanRate: typeof import('@jjlc/vant-plus/es')['Rate']
     VanRow: typeof import('@jjlc/vant-plus/es')['Row']
