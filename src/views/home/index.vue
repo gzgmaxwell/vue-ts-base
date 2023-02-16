@@ -110,6 +110,14 @@ const router = useRouter()
     >
       vanPopup
     </van-button>
+    <van-button
+      class="home-view__button"
+      type="primary"
+      block
+      @click="() => router.push({ name: 'TransformIndex' })"
+    >
+      transformIndex
+    </van-button>
   </div>
 </template>
 
