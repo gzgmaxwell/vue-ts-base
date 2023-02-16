@@ -67,12 +67,7 @@ const { theme } = storeToRefs(appStore)
 const onUpdateValue = (newValue: boolean) => {
   checked.value = newValue
   const value: ConfigProviderTheme = newValue ? 'dark' : 'light'
-  appStore.changeVantTheme(value)
-  if (value === 'dark') {
-    document.documentElement.classList.add('dark')
-  } else {
-    document.documentElement.classList.remove('dark')
-  }
+  appStore.changeTheme(value)
 }
 
 const rate = ref(4)
